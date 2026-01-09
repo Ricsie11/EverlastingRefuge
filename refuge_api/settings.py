@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # Third-party
     'rest_framework',
     'rest_framework_simplejwt',
+    'phonenumber_field',
 ]
 
 
@@ -167,3 +168,6 @@ SIMPLE_JWT = {
 # ⚙️ DEFAULT PRIMARY KEY
 # ===========================
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTH_USER_MODEL = "refuge.CustomUser"
