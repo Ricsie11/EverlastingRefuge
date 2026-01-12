@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'phonenumber_field',
+    'django_celery_beat',
+    'django_celery_results',
 ]
 
 
@@ -171,3 +173,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = "refuge.CustomUser"
+
+
+CELERY_BROKER_URL = 'django://'
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
