@@ -1,9 +1,9 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.utils import timezone
-
+from rest_framework import status
 from .models import (
     CustomUser,
     Group,
@@ -12,11 +12,49 @@ from .models import (
     Attendance
 )
 from .permissions import IsAdminOrSuperUser
+from rest_framework_simplejwt.views import TokenObtainPairView
 from .serializers import (
     UserSerializer,
     GroupSerializer,
-    HouseFellowshipSerializers
+    HouseFellowshipSerializers,
+    UserRegistrationSerializer,
+    EmailTokenObtainPairSerializer,
+    JoinGroupSerializer,
+
 )
+
+# =======================
+# User Registration Views
+# =======================
+class UserRegistrationView(APIView):
+    """
+    Register a new user.
+    Public endpoint.
+    """
+
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        serializer = UserRegistrationSerializer(data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response({
+                "detail":"User registered successfully!"
+            }, status=status.HTTP_201_CREATED)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+# =======================
+# Email Token View
+# =======================
+class EmailTokenObtainPairView(TokenObtainPairView):
+    """
+    JWT login view using email instead of username.
+    """
+    serializer_class = EmailTokenObtainPairSerializer
+    
 
 # =======================
 # User Views
@@ -74,6 +112,27 @@ class GroupDetailView(RetrieveUpdateDestroyAPIView):
         Return all groups for lookup.
         """
         return Group.objects.all()
+    
+
+class JoinGroupView(APIView):
+    """
+    Allows a user to join ONE group only.
+    """
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        serializer = JoinGroupSerializer(
+            data=request.data,
+            context={"request": request}
+        )
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response({
+                "detail": "Successfully Joined group"
+            }, status=status.HTTP_200_OK)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 # =======================

@@ -9,8 +9,12 @@ class IsSuperUser(BasePermission):
     
 
 class IsAdminOrSuperUser(BasePermission):
+    """
+    Allows access only to ADMIN or SUPERUSER roles.
+    """
     def has_permission(self, request, view):
         return (
+            request.user and
             request.user.is_authenticated and 
             request.user.role in ['ADMIN', 'SUPERUSER']
         )
