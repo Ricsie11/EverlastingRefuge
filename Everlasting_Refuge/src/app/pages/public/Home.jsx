@@ -83,7 +83,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl text-gray-900 dark:text-gray-100 mb-4">
+            <h2 className="text-4xl font-medium text-gray-900 dark:text-gray-100 mb-4">
               What We Offer
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">

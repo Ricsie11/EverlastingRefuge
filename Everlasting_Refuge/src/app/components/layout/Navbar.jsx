@@ -31,7 +31,7 @@ export default function Navbar() {
             key={link.path}
             to={link.path}
             className={({ isActive }) =>
-              `text-sm font-medium transition ${
+              `text-lg font-medium transition ${
                 isActive
                   ? "text-blue-600 dark:text-blue-400"
                   : "text-gray-700 dark:text-gray-300"
