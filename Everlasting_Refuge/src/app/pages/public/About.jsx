@@ -7,7 +7,7 @@ const About = () => {
       {/* Intro Section */}
       <div className="max-w-4xl mx-auto p-6 mt-16 text-center">
         <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-          About Everlasting Refuge Church
+          About Everlasting Refuge Parish
         </h1>
         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-400">
           Welcome to Everlasting Refuge Church. Our mission is to glorify God
@@ -21,10 +21,10 @@ const About = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Vision Card */}
           <Card className="border border-gray-200 dark:border-gray-700 p-12 shadow-lg">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+            <h2 className="text-2xl md:text-3xl underline font-bold text-gray-900 dark:text-gray-100 mb-6">
               Vision
             </h2>
-            <ul className="list-none text-gray-700 dark:text-gray-300 leading-relaxed ">
+            <ul className="list-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-3">
               <li>To make heaven.</li>
               <li>To take as many people with us.</li>
               <li>
@@ -41,10 +41,10 @@ const About = () => {
 
           {/* Mission Card */}
           <Card className="border border-gray-200 dark:border-gray-700 p-12 shadow-lg">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+            <h2 className="text-2xl md:text-3xl underline font-bold text-gray-900 dark:text-gray-100 mb-6">
               Mission
             </h2>
-            <ul className="list-none text-gray-700 dark:text-gray-300 leading-relaxed ">
+            <ul className="list-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-3">
               <li>
                 To reach every nation of the world for the Lord Jesus Christ.
               </li>
