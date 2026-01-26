@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../../context/AuthContext";
 import { QrCode } from "lucide-react";
 import { motion } from "framer-motion";
-import { api } from "../../services/api";
+import { api } from "../../../api/axios";
 
 const ScanQR = () => {
   const { user } = useAuth();
