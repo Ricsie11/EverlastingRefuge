@@ -84,7 +84,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-medium text-gray-900 dark:text-gray-100 mb-4">
-              What We Offer
+              Come Worship the Lord with us
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Discover how Everlasting Refuge Church can help you grow in your
@@ -129,14 +129,14 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center text-white"
         >
-          <h2 className="text-4xl mb-6">Ready to Get Started?</h2>
+          <h2 className="text-4xl font-bold mb-6">Everlasting Refuge</h2>
           <p className="text-xl mb-8">
             Join a small group, participate in our events, and become part of
             our church family.
           </p>
           <Link to="/login">
             <div className="flex justify-center">
-              <Button className="bg-white text-blue-600 cursor-pointer hover:bg-gray-100 flex items-center gap-2 p-3 rounded-lg">
+              <Button className="bg-white text-blue-600 cursor-pointer hover:bg-gray-300 flex items-center gap-2 p-3 rounded-lg">
                 Login to Join a Group <ArrowRight size={18} />
               </Button>
             </div>
