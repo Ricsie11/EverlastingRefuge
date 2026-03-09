@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --primary: 220 40% 13%; 
+  --accent: 217 70% 53%; 
+  --background: 210 40% 98%; 
+  --text-main: 222 47% 11%;
+  --text-muted: 215 16% 47%;
+}
+
+@theme {
+  --color-primary: hsl(var(--primary));
+  --color-gold: hsl(var(--accent));
+  --color-gold-dark: hsl(var(--accent) / 0.8);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-slate-50 text-slate-950 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50;
+}
+
+/* Custom dark mode overrides if needed */
+.dark body {
+  background-color: #020617; /* slate-950 */
+}
+
+.glass-nav {
+  @apply bg-white/70 backdrop-blur-md border-b border-slate-100 transition-colors duration-300;
+}
+
+.dark .glass-nav {
+  @apply bg-slate-900/70 border-slate-800;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F1D27B 50%, #D4AF37 100%);
+}
+
+.holy-glow {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+html, body {
+  @apply m-0 p-0 w-full h-full;
+}
